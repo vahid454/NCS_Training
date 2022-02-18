@@ -1,0 +1,21 @@
+
+1.Wap in java script to calculate the current age of the employee by using dob which is entered by the user.
+2.Wap in java script for pizza order shop if customer buys the order then finds the total bill. Here, mention the product and their cost
+Items               Cost
+Pizza           350
+Burger              250
+Cold drink         50
+Tea                  60
+Coffee               80
+
+3.Wap in java script to check the age of the voter if voter age is less than 18 then display  the message “You are not eligible” if voter age is greater then go to the voting page.
+4.wap in java script to check if a given year is leap year or not.
+5.Wap in javascript with html to check the validation of the by user registration
+ if it does not match then display the error
+.A. Age is not less than 18.
+B. Email id should be in correct format.
+C. First name & Email should be required.
+D. Mobile number should be 10 digitsIf all the values are correct
+ then show the welcome page 
+otherwise shows all the errors in front of the user.   
+
