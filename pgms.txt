@@ -1,0 +1,160 @@
+
+1)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A5_P1
+{
+
+    public class SI{
+        public float sbi = (float)Convert.ToDouble(0.102);
+    }
+    public class Inheritance1 : SI
+    {
+        public float axis = (float)Convert.ToDouble(0.9);
+
+    }
+    public class Inheritance2 : SI
+    {
+        public float c = (float)Convert.ToDouble(0.9);
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int p = Convert.ToInt32(Console.ReadLine());
+            int t = Convert.ToInt32(Console.ReadLine());
+            Inheritance1 si = new Inheritance1();
+            double si1 =(p*t*si.sbi) /100;
+            Console.WriteLine("simple interest of sbi bank is :"+si1);
+            double si2 = (p * t * si.axis) / 100;
+            Console.WriteLine("simple interest of axis bank is :" + si2);
+            Inheritance2 s1 = new Inheritance2();
+            double si3 = (p * t * s1.c) / 100;
+            Console.WriteLine("simple interest of cosmos bank is :" + si3);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+
+4a)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace as5
+{
+    class Prog
+    {
+        public int Add(int num1)
+        {
+            return (num1 * num1 * num1);
+        }
+        public float Add(float num2,float num3)
+        {
+            return (num2 * num3);
+        }
+        public float Add(float num1)
+        {
+            if(num1==0f)
+            {
+                return 1;
+            }
+            else
+            {
+                return (num1 * Add(num1 - 1));
+            }
+        }
+
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                
+                Prog obj = new Prog();
+                
+                Console.WriteLine("Suare of number :" + obj.Add(3,5));
+                Console.WriteLine("factorial of number :" + obj.Add(5f));
+                Console.WriteLine("cube of number :" + obj.Add(5));
+                Console.ReadLine();
+
+            }
+        }
+    }
+}
+
+
+
+4b)
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A5P4B
+{
+    public class My1
+    {
+        public virtual void Square(int n1)
+        {
+            Console.WriteLine("square");
+        }
+        public virtual void Cube(int n3)
+        {
+            Console.WriteLine("cube");
+        }
+        public virtual void Factorial(int n3)
+        {
+            Console.WriteLine("fact");
+        }
+    }
+    public class My2 : My1
+    {
+        public override void Square(int n1)
+        {
+            Console.WriteLine(n1 * n1);
+        }
+        public override void Cube(int n3)
+        {
+            Console.WriteLine(n3 * n3 * n3);
+
+        }
+        public override void Factorial(int n)
+        {
+            int Fact = 1;
+            for (int i = 1; i < n+1; i++)
+            {
+                Fact = Fact*i;
+            }
+            Console.WriteLine(Fact);
+            Console.ReadLine();
+        }
+
+    }
+        internal class Program
+    {
+        static void Main(string[] args)
+        {
+            My1 s1=new My2();
+            s1.Square(4);
+            s1.Cube(2);
+            s1.Factorial(4);
+            Console.ReadLine();
+
+
+        }
+    }
+}
+
