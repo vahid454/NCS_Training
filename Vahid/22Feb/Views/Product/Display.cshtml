@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+</head>
+<body>
+    <div>
+        <table align="center" border="3px" width="50%">
+            <tr><td colspan="2"><h2>Products</h2></td></tr>
+            <tr>
+
+                <td colspan="1" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:22px">Id</td>
+
+                <td colspan="1" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:22px">Name</td>
+            </tr>
+            <tr>
+                @foreach (var i in ViewBag.Products)
+                {
+                <tr style="font-size:18px">
+
+                    <td>@i.Id</td>
+
+                    <td>@i.Name</td>
+                </tr>
+
+            }
+                </tr>
+            </table>
+
+
+        </div>
+</body>
+</html>
