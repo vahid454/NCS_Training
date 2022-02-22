@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.default.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.2.714/js/kendo.all.min.js"></script>
+    <style type="text/css">
+        #name {
+            width: 230px;
+            height: 30px;
+            font-size: 22px;
+            background-color: rgb(235, 226, 226);
+        }
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("#submit").click(function(){
+               
+                    if(!$("#name").val())
+                    {
+                        alert("Please enter name..");
+                        return false;
+                    }
+                    if(!$("#datepicker").val())
+                    {
+                        alert("Please enter DOB..");
+                        return false;
+                    }
+                    else{
+                        alert("Thanks, registration done..");
+                    }
+                });
+            });
+        </script>
+</head>
+<body align="center" style="font-size: 20px">
+    <div id="reg-form"><br>
+        Name <input id="name" />
+        <br><br>
+        Age  <input id="datepicker" />
+        <script>
+        $(function() {
+        $("#datepicker").kendoDatePicker();
+        });
+        </script><br><br>
+        City          
+    <input id="dropdownlist" />
+    <script>
+    $("#dropdownlist").kendoDropDownList({
+     dataSource: [
+      { id: 1, name: "Pune" },
+      { id: 2, name: "Mumbai" },
+      { id: 3, name: "Delhi" },
+      { id: 4, name: "Chennai" },
+      { id: 5, name: "Ujjain" },
+      { id: 6, name: "Bhopal" },
+      { id: 7, name: "Indore" },
+      { id: 8, name: "Agra" }
+      ],
+     dataTextField: "name",
+         dataValueField: "id"
+        });
+        var dropdownlist = $("#dropdownlist").data("kendoDropDownList");
+        dropdownlist.select(dropdownlist.ul.children().eq(0));
+        </script>
+        </input>
+      
+
+        <br><br>
+        <button type="submit" id="submit" style="width: 150px; width: 120px;">Submit</button>
+    </div>
+   
+</body>
+</html>
+ 

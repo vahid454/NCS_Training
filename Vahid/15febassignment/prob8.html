@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><title>JQuery Assignments</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#getSum").click(function(){
+        var sum=parseInt($("#firstNum").val())+parseInt($("#secondNum").val());
+        $("#res").html("Sum : "+sum);
+    });
+    $("#getSub").click(function(){
+        var sum=parseInt($("#firstNum").val())-parseInt($("#secondNum").val());
+        $("#res").html("Sub : "+sum);
+    });
+    $("#getMul").click(function(){
+        var sum=parseInt($("#firstNum").val())*parseInt($("#secondNum").val());
+        $("#res").html("Mul : "+sum);
+    });
+    $("#getDiv").click(function(){
+        var sum=parseInt($("#firstNum").val())/parseInt($("#secondNum").val());
+        $("#res").html("Div : "+sum);
+    });
+
+    $("#getGrossSal").click(function(){
+        var sumofSal=parseInt($("#basicSal").val())+parseInt($("#houseAll").val())+parseInt($("#travelAll").val())+parseInt($("#dearAll").val());
+        var res=sumofSal-(2*parseInt($("#proTax").val()));
+        $("#resSal").html("Your gross salary : "+res);
+    });
+    $("#para3").on({
+    "click": function() { console.log( "clicked.." ); },
+    "mouseover": function() { 
+        $("#welcome-text").html("Welcome");
+        console.log( "hovered.." ); }
+    });
+});
+</script>
+</head>
+<body align="center" style="background-color:antiquewhite">
+<div id="firstQues" >
+<h2>Question 8.</h2>
+<h3>Calculator</h3>
+<table border="3px" align="center">
+    <tr><td><input type="number" id="firstNum" style="font-size: 20px;"></td><td><input type="number" id="secondNum" style="font-size: 20px;"></td></tr>
+    <tr>
+         <td colspan="2"><h3 id="res"></h3>
+    </tr>
+    <tr><td><button type="submit" id="getSum" style="color: blue;font-size: 19px;">Add ( + ) </button></td>
+        <td><button type="submit" id="getSub" style="color: blue;font-size: 19px;">Sub ( - )</button></td>
+    </tr>
+    <tr><td><button type="submit" id="getMul" style="color: blue;font-size: 19px;">Mul ( * )</button></td>
+        <td><button type="submit" id="getDiv" style="color: blue;font-size: 19px;">Div ( / )</button></td>
+    </tr>
+</table>
+
+
+</div>
+</body>
+</html>
+
+

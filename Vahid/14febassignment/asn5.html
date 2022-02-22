@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<title>Java Script Assignment</title>
+<script>
+function checkRegistration()
+{
+document.getElementById("result").innerHTML="";
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var age=document.getElementById("age").value;
+var phone=document.getElementById("phone").value;
+if(!name || !email)
+{
+document.getElementById("result").innerHTML="Please enter name and email...";
+return;
+}
+if(phone.length!=10)
+{
+document.getElementById("result").innerHTML="Please enter proper phone number...";
+return;
+}
+if(age<18)
+{
+document.getElementById("result").innerHTML="You are not eligible...";
+return;
+}
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if (email.match(validRegex)) 
+{
+document.getElementById("result").innerHTML="You are eligible...";
+window.location.href="registraion.html?backurl="+window.location.href;
+
+}
+else
+{
+document.getElementById("result").innerHTML="Please correct your email...";
+return;
+}
+}
+
+</script>
+</head>
+
+<body align="center">
+
+<div id="fifthQuestion">
+<br><br><h2>Registration Form</h2>
+Enter your name : <input type="text" id="name"><br>   <br>
+Enter your email : <input type="text" id="email"><br>   <br>
+Enter your age : <input type="number" id="age"><br>   <br>
+Enter your phone : <input type="number" id="phone"><br>   <br>
+
+<button type="submit" id="registration" onclick=checkRegistration()>Submit</button>
+<h3 id="result"></h3>
+</div>
+
+</body>
+</html>

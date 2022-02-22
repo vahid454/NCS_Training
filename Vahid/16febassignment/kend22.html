@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default-v2.min.css"/>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+<ul id="country">
+<li>India
+    <ul id="states">
+        <li>Madhya Pradesh
+            <ul>
+                <li>Sarangpur</li>
+                <li>Ujjain</li>
+            </ul>
+       </li>
+       <li>Uttar Pradesh
+            <ul>
+                <li>Agra</li>
+                <li>Prayagraj</li>
+            </ul>
+       </li> 
+       <li>Rajasthan
+            <ul>
+                <li>Jaipur</li>
+                <li>Udaypur</li>
+            </ul>
+       </li>
+    </ul>
+</li>
+<li>USA
+    <ul id="states">
+        <li>Texas
+            <ul>
+                <li>ABC</li>
+                <li>XYZ</li>
+            </ul>
+       </li>
+       <li>Wasington
+            <ul>
+                <li>Seattle</li>
+                <li>Mount Rainier</li>
+            </ul>
+       </li> 
+      
+    </ul>
+</li>
+
+<script>
+$(document).ready(function(){
+    $("#country").kendoTreeView({
+  
+    });
+ 
+});
+</script>
+
+
+
+</body>
+</html>

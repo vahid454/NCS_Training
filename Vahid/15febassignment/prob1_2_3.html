@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><title>JQuery Assignments</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#getSum").click(function(){
+        var sum=parseInt($("#firstNum").val())+parseInt($("#secondNum").val());
+        $("#sumRes").html("Sum : "+sum);
+    });
+    $("#getSub").click(function(){
+        var sum=parseInt($("#firstNum").val())-parseInt($("#secondNum").val());
+        $("#sumRes").html("Sub : "+sum);
+    });
+    $("#getMul").click(function(){
+        var sum=parseInt($("#firstNum").val())*parseInt($("#secondNum").val());
+        $("#sumRes").html("Mul : "+sum);
+    });
+    $("#getDiv").click(function(){
+        var sum=parseInt($("#firstNum").val())/parseInt($("#secondNum").val());
+        $("#sumRes").html("Div : "+sum);
+    });
+
+    $("#getGrossSal").click(function(){
+        var sumofSal=parseInt($("#basicSal").val())+parseInt($("#houseAll").val())+parseInt($("#travelAll").val())+parseInt($("#dearAll").val());
+        var res=sumofSal-(2*parseInt($("#proTax").val()));
+        $("#resSal").html("Your gross salary : "+res);
+    });
+    $("#para3").on({
+    "click": function() { console.log( "clicked.." ); },
+    "mouseover": function() { 
+        $("#welcome-text").html("Welcome");
+        console.log( "hovered.." ); }
+    });
+});
+</script>
+</head>
+<body align="center" style="background-color:antiquewhite">
+<div id="firstQues">
+<h2>Question 1.</h2>
+<br><br>Enter First Number <input type="number" id="firstNum">
+<br><br>Enter Second Number <input type="number" id="secondNum">
+<br><br><button type="submit" id="getSum">Get Sum</button>
+<br><br><button type="submit" id="getSub">Get Sub</button>
+<br><br><button type="submit" id="getMul">Get Mul</button>
+<br><br><button type="submit" id="getDiv">Get Div</button>
+<h3 id="sumRes"></h3>
+<h3 id="subRes"></h3>
+<h3 id="mulRes"></h3>
+<h3 id="divRes"></h3>
+</div>
+<div id="secondQues">
+<h2>Question 2.</h2>
+<br><br>Basic Salary <input type="number" id="basicSal">
+<br><br> House Allowance <input type="number" id="houseAll">
+<br><br> Travel Allowance <input type="number" id="travelAll">
+<br><br> Dear Allowance <input type="number" id="dearAll">
+<br><br> Professional Tax <input type="number" id="proTax">
+
+<br><br><button type="submit" id="getGrossSal">Get Gross Salary</button>
+<h3 id="resSal"></h3>
+</div>
+<div id="thirdQues">
+<h2>Question 3.</h2>
+<br><p id="para3" style="font-size: large; font-family: 'Courier New', Courier, monospace;">JQuery Events Check on console</p>
+<p id="welcome-text" style="font-size: large;"></p>
+<br>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>JQuery Assignments</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+/*
+$("#slideit").click(function(){
+$('.slides > li:first')
+  .fadeOut(4000)
+  .next()
+  .appendTo('.slides')
+  .end();
+});
+*/
+var i=1;
+var handle=setInterval(function(){
+ $('.slides > li:first')
+ .fadeOut(4000).appendTo('.slides');
+i++;
+if(i>20) clearInterval(handle);
+},3800);
+
+
+});
+</script>
+</head>
+<body align="center" style="background-color: lightblue">
+<div id="fourthQues">
+<h2>Question 5.</h2>
+<div class="slider">
+    <button type="submit" id="slideit">Do Slide</button>
+    <ul class="slides">
+      <li class="slide" style="align-content:center"><img src="https://unsplash.it/1280/720/?image=120" width="900" height="500"/></li>
+      <li class="slide"><img src="https://unsplash.it/1280/720/?image=70" width="900" height="500"/></li>
+      <li class="slide"><img src="https://unsplash.it/1280/720/?image=50" width="900" height="500"/></li>
+      <li class="slide"><img src="https://unsplash.it/1280/720/?image=170" width="900" height="500"/></li>
+      <li class="slide"><img src="https://unsplash.it/1280/720/?image=190" width="900" height="500"/></li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

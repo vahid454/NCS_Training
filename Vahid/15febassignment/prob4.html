@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>JQuery Assignments</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+class Rectangle{
+    constructor(height,width)
+    {
+        this.height=height;
+        this.width=width;
+    }
+    calculateArea()
+    {
+        return parseInt(this.height)*parseInt(this.width);
+    }
+    display()
+    {
+        return parseInt(this.calculateArea());
+    }
+} 
+$(document).ready(function(){
+    $("#getArea").click(function(){
+        var rect=new Rectangle(($("#height").val()),($("#width").val()));
+        $("#resArea").html("Area is : "+rect.display()+" cm square...");
+    });
+   
+});
+</script>
+</head>
+<body align="center" style="background-color: lightblue">
+<div id="fourthQues">
+<h2>Question 4.</h2>
+Enter Height <input type="number" id="height">
+<br><br>
+Enter Width <input type="number" id="width">
+<br><br><button id="getArea">Calculate Area</button>
+<p id="resArea" style="font-size: 22px; "></p>
+</div>
+
+</body>
+</html>

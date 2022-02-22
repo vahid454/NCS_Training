@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><title>JQuery Assignments</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+function validate(){
+    var firstName = $('#firstName').val();
+    var lastName = $('#lastName').val();
+    var email = $('#email').val();
+    var country = $('#countryName').val();
+    var phone = $('#phone').val();
+
+
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (!$.trim(firstName) || !$.trim(lastName)) {
+        alert('Name is required!');
+        return false;
+    } else {
+        if(!$.trim(email))
+        {
+            alert('Email is required!');
+            return false;
+        }
+        if($.trim(phone.length)!=10)
+        {
+            alert("Please correct phone!");
+            return false;
+        }
+        if(!$.trim(country))
+        {
+            alert("Please enter your country!");
+            return false;
+        }
+        if(!$.trim(email).match(validRegex))
+        {
+            alert("Please enter correct email!");
+            return false;
+        }
+        else{
+        alert("Congrats!!");
+        return true; 
+         }
+    }
+} //function
+$(document).ready(function(){
+$('#testForm').submit(validate);
+       
+});
+</script>
+</head>
+<body align="center" style="background-color:antiquewhite">
+<div id="firstQues" >
+<h2>Question 1.</h2>
+<form id="testForm">
+    <br>  <br> First Name : <input type="text" id="firstName" />  
+   <br> <br> Last Name : <input type="text" id="lastName" />  
+   <br> <br> Email : <input type="text" id="email" />  
+   <br><br>  Country : <input type="text" id="countryName" />  
+   <br> <br>  Phone : <input type="number" id="phone" />  
+    <br><br>
+
+    <input type="submit" id='saveUser' value="Add User" />
+ 
+</form>
+</div>
+</body>
+</html>
+
+

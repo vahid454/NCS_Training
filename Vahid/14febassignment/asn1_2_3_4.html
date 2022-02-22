@@ -1,0 +1,111 @@
+<!Doctype html>
+<HTML>
+<head><title>JavaScript Assignments</title>
+<script>
+function getAge()
+{
+var dob=document.getElementById("dob").value;
+var today = new Date();
+var birthDate = new Date(dob);
+var age = today.getFullYear() - birthDate.getFullYear();
+var m = today.getMonth() - birthDate.getMonth();
+if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+{
+age--;
+}
+if(m<0)
+{
+m=12+m;
+}
+document.getElementById("calculatedAge").innerHTML="Age : "+age+" year and "+m+" months.";	
+}
+
+function calculateBill()
+{
+var res=0;
+for(var i=1;i<=5;i++)
+{
+if(document.getElementById("item"+i).checked == true)
+{
+res=res+parseInt(document.getElementById("item"+i).value);
+}
+}
+document.getElementById("calculatedBill").innerHTML="Total expenses : "+res+ " rs.";	
+}
+//---------------------------
+function goForVoting()
+{
+var age=document.getElementById("voterage").value;
+
+if(age>=18)
+{
+window.location.href="votingdash.html?backurl="+window.location.href;
+}
+else
+{
+document.getElementById("noteligible").innerHTML="Sorry! you are not eligible for voting";
+}
+}
+
+//---------------------------
+function checkYear()
+{
+var year=document.getElementById("year").value;
+if(year%4==0) 
+{
+document.getElementById("resultyear").innerHTML="Entered year is leap year.";
+
+}else
+{
+document.getElementById("resultyear").innerHTML="Entered year is not a leap year.";
+
+}
+
+}
+
+</script>
+</head>
+<body>
+<h2 align="center">JavaScript Assignments</h2>
+<div id="firstQuestion">
+<h3> Question 1. <br>
+Enter date of birth <input type="date" id="dob" min="1990-01-01">
+<br>
+</h3>
+<button type="submit" id=getAgeButton onclick=getAge()>Get Age</button>
+<h3 id="calculatedAge"></h3>
+</div>
+
+<div id="secondQuestion">
+<h3> Question 2. <br><br>
+  <input type="checkbox" id="item1" value="300">
+  <label for="item1"> Pizza 300/-</label><br>
+  <input type="checkbox" id="item2" value="250">
+  <label for="item2"> Burger 250/-</label><br>
+  <input type="checkbox" id="item3" value="50">
+  <label for="item3"> Cold Drink 50/-</label><br>
+  <input type="checkbox" id="item4" value="60">
+  <label for="item4"> Tea 60/-</label><br>
+  <input type="checkbox" id="item5" value="80">
+  <label for="item5"> Coffee 80/-</label><br><br>
+
+<button type="submit" id="getCalculatedBill" onclick=calculateBill()>Get Bill</button>
+<h3 id="calculatedBill"></h3>
+</div>
+
+<div id="thirdQuestion">
+<h3> Question 3. <br><br>
+Enter your age : <input type="number" id="voterage"><br>   <br>
+<button type="submit" id="votingMachine" onclick=goForVoting()>Vote me</button>
+<h3 id="noteligible"></h3>
+</div>
+
+<div id="fourthQuestion">
+<h3> Question 4. <br><br>
+Enter the year : <input type="number" id="year"><br>   <br>
+<button type="submit" id="checkyear" onclick=checkYear()>Check Year</button>
+<h3 id="resultyear"></h3>
+</div>
+
+</body>
+</HTML>

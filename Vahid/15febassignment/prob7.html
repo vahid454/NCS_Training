@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>JQuery Assignment KendoUI</title>
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default-v2.min.css"/>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"/>
+  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <select id="listBox"></select>
+    <select id="combo-box"></select>
+    <script>
+    $("#listBox").kendoListBox({
+         dataSource: {
+            data: [
+                { name: "India" },
+                { name: "USA" }
+            ]
+        },
+        template: "<div>#:name#</div>"
+    });
+ 
+    var listBox = $("#listBox").data("kendoListBox");
+    var person = [{name: "China"},{name: "Shri Lanka"},{name:"Japan"},{name:"Singapore"},{name:"Malasiya"}];
+    listBox.add(person);
+
+   
+    $('#combo-box').kendoComboBox({
+      autoWidth: false,
+      index: 0,
+      dataTextField: 'name',
+      dataValueField: 'id',
+      dataSource: [
+        { 'name': 'India', id: 0 },
+        { 'name': 'China', id: 1 },
+        { 'name': 'Shri Lanka', id: 2 },
+        { 'name': 'USA', id: 3 }
+      ]
+    });
+    </script>
+    
+    
+</body>
+</html>
