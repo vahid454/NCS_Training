@@ -36,8 +36,15 @@ namespace _22febMVC.Controllers
         }
         public ActionResult Display2()
         {
-            ViewBag.Employees = TempData["Employees"];
-            return View();
+            if (TempData["Employees"]!=null)
+            {
+                ViewBag.Employees = TempData["Employees"];
+                return View();
+            }
+            else 
+            {
+                return RedirectToAction("Index");
+            }
         }
     }
 }
