@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body style="background-color:azure">
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">NCSI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Services">Services <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="ContactUS">Contact US <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="AboutUS">About US <span class="sr-only">(current)</span></a>
+                    </li>
+                    @if (ViewBag.UserActive == false)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="Login">Login</a>
+                                <a class="dropdown-item" href="Registration">Registraion</a>
+
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="navbar-brand" href="#" id="employee_title">@ViewBag.EmployeeTitle</a>
+                </form>
+            </div>
+        </nav>
+
+    </div><br><br>
+
+    <div name="main-show">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Welcome to NCS India</h1>
+                <p>
+                    This website is just a replica of NCS, it represents the vision of the organization. We have overall more than 4 hundred colleagues; each one of us has some brilliant capability.
+                    We are looking forward for the growth of the nation and the organization. Making extraordinary happen.
+
+                </p>
+                <p><a class="btn btn-primary btn-lg" href="AboutUS" role="button">Learn more »</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div name="main-content">
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xlink:href="images/ai.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><image href="/images/ai.png" width="140" height="140" /></svg>
+
+                    <h2>Artificial Intelligence</h2>
+
+                    <p>NCS is working on latest real-time experience with AI in neural science.</p>
+
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xlink:href="images/ai.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><image href="/images/ml.png" width="140" height="140" /></svg>
+
+                    <h2>Machine Learning</h2>
+                    <p>Using ML in the field of Pharma for getting the treatment better; creating a lots of equipment.</p>
+
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xlink:href="images/ai.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><image href="/images/cloud.png" width="140" height="140" /></svg>
+
+                    <h2>Cloud & IOT</h2>
+                    <p>Continuosly eveloping the Cloud Architecture and IOT combined. Making 5th generation gNB.</p>
+
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+            <!-- /END THE FEATURETTES -->
+
+        </div>
+
+    </div>
+    <br><br>
+
+    <br><br>
+    <div name="footer" style="text-align:center; font-size:18px; background-color:cornsilk; margin-bottom:0%" class="align-bottom">
+        <footer class="blog-footer">
+            <p>NCSI Website build with <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://instagram.com/mr_right_454">Awesome</a>.</p>
+            <br>Copyright NCSI 2017-2022
+            <p>
+                <a href="#">Back to top</a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
