@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayAll</title>
+</head>
+<body align="center" style="background-color:aliceblue">
+    <div>
+        <h2>Employee Details</h2>
+
+        <table border="2" style="width:60%;font-size:24px" align="center">
+            <thead>
+                <tr class="btn-primary">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model)
+                {
+                    <tr>
+                        <td>@e.Id</td>
+                        <td>@e.Name</td>
+                        <td>@e.Age</td>
+                        <td>@e.City</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div><br><br>
+    <div style="font-size=20px">
+    @Html.ActionLink("Add Employee", "AddEmployee")
+    </div>
+</body>
+</html>

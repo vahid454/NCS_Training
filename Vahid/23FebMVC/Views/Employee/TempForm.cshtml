@@ -1,0 +1,65 @@
+﻿@model _23FebMVC.Models.EmployeeModel
+@{
+    Layout = null;
+}
+<!-- this form is designed to learn validation on client side -->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TempForm</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#submit').click(function () {
+                alert("Checking.....");
+                var id = $("#id").val().trim();
+                var name = $("#name").val().trim();
+                alert(name);
+            });
+
+        });
+
+    </script>
+
+</head>
+<body align="center">
+    <div>
+        @using (Html.BeginForm())
+        {
+        <div class="form-horizontal">
+            <h4>EmployeeModel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "required" })
+            
+            <div class="form-group">
+                @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="id">
+                    @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Id, "", new { @class = "required" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="name">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "required" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id ="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+                }
+    <h1 id="res"></h1>
+    </div>
+
+</body>
+</html>
